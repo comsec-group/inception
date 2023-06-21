@@ -1,0 +1,98 @@
+   BYTE UNIX Benchmarks (Version 5.1.3)
+
+   System: ee-tik-cn110: GNU/Linux
+   OS: GNU/Linux -- 5.19.0-28-generic -- #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec 15 12:05:40 UTC 2
+   Machine: x86_64 (x86_64)
+   Language: en_US.utf8 (charmap="UTF-8", collate="UTF-8")
+   CPU 0: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 1: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 2: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 3: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 4: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 5: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 6: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 7: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 8: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 9: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 10: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 11: AMD Ryzen 5 3600X 6-Core Processor (7600.1 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   16:32:05 up  3:10,  1 user,  load average: 60.39, 36.31, 20.02; runlevel 2023-02-01
+
+------------------------------------------------------------------------
+Benchmark Run: Mi Feb 01 2023 16:32:05 - 17:00:02
+12 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       55537013.8 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     9713.1 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               3439.9 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        335114.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           85609.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks       1215558.7 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              450168.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 126067.2 lps   (10.0 s, 7 samples)
+Process Creation                               6953.4 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   8338.9 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   5300.7 lpm   (60.0 s, 2 samples)
+System Call Overhead                         384506.8 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   55537013.8   4759.0
+Double-Precision Whetstone                       55.0       9713.1   1766.0
+Execl Throughput                                 43.0       3439.9    800.0
+File Copy 1024 bufsize 2000 maxblocks          3960.0     335114.5    846.2
+File Copy 256 bufsize 500 maxblocks            1655.0      85609.0    517.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0    1215558.7   2095.8
+Pipe Throughput                               12440.0     450168.7    361.9
+Pipe-based Context Switching                   4000.0     126067.2    315.2
+Process Creation                                126.0       6953.4    551.9
+Shell Scripts (1 concurrent)                     42.4       8338.9   1966.7
+Shell Scripts (8 concurrent)                      6.0       5300.7   8834.5
+System Call Overhead                          15000.0     384506.8    256.3
+                                                                   ========
+System Benchmarks Index Score                                        1046.7
+
+------------------------------------------------------------------------
+Benchmark Run: Mi Feb 01 2023 17:00:02 - 17:28:00
+12 CPUs in system; running 12 parallel copies of tests
+
+Dhrystone 2 using register variables      442456481.7 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                    99937.3 MWIPS (10.0 s, 7 samples)
+Execl Throughput                              24574.9 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        769666.2 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks          197328.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks       2608254.4 KBps  (30.0 s, 2 samples)
+Pipe Throughput                             3874914.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 752766.0 lps   (10.0 s, 7 samples)
+Process Creation                              64953.4 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                  61934.5 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   8163.1 lpm   (60.0 s, 2 samples)
+System Call Overhead                        2712439.9 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0  442456481.7  37914.0
+Double-Precision Whetstone                       55.0      99937.3  18170.4
+Execl Throughput                                 43.0      24574.9   5715.1
+File Copy 1024 bufsize 2000 maxblocks          3960.0     769666.2   1943.6
+File Copy 256 bufsize 500 maxblocks            1655.0     197328.0   1192.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0    2608254.4   4497.0
+Pipe Throughput                               12440.0    3874914.7   3114.9
+Pipe-based Context Switching                   4000.0     752766.0   1881.9
+Process Creation                                126.0      64953.4   5155.0
+Shell Scripts (1 concurrent)                     42.4      61934.5  14607.2
+Shell Scripts (8 concurrent)                      6.0       8163.1  13605.2
+System Call Overhead                          15000.0    2712439.9   1808.3
+                                                                   ========
+System Benchmarks Index Score                                        5257.1
+

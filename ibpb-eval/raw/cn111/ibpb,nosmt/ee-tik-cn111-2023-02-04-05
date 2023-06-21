@@ -1,0 +1,86 @@
+   BYTE UNIX Benchmarks (Version 5.1.3)
+
+   System: ee-tik-cn111: GNU/Linux
+   OS: GNU/Linux -- 5.19.0-28-generic -- #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec 15 12:05:40 UTC 2
+   Machine: x86_64 (x86_64)
+   Language: en_US.utf8 (charmap="UTF-8", collate="UTF-8")
+   CPU 0: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 1: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 2: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 3: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 4: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 5: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   20:56:43 up  4:53,  0 users,  load average: 36.64, 21.67, 11.59; runlevel 2023-02-04
+
+------------------------------------------------------------------------
+Benchmark Run: Sa Feb 04 2023 20:56:43 - 21:24:42
+6 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       44214848.0 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     7458.3 MWIPS (9.9 s, 7 samples)
+Execl Throughput                               1825.0 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        127122.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           32256.5 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        476231.1 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              149603.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  71814.7 lps   (10.0 s, 7 samples)
+Process Creation                               4893.2 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   7730.6 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   2990.5 lpm   (60.0 s, 2 samples)
+System Call Overhead                          77906.8 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   44214848.0   3788.8
+Double-Precision Whetstone                       55.0       7458.3   1356.0
+Execl Throughput                                 43.0       1825.0    424.4
+File Copy 1024 bufsize 2000 maxblocks          3960.0     127122.5    321.0
+File Copy 256 bufsize 500 maxblocks            1655.0      32256.5    194.9
+File Copy 4096 bufsize 8000 maxblocks          5800.0     476231.1    821.1
+Pipe Throughput                               12440.0     149603.7    120.3
+Pipe-based Context Switching                   4000.0      71814.7    179.5
+Process Creation                                126.0       4893.2    388.4
+Shell Scripts (1 concurrent)                     42.4       7730.6   1823.3
+Shell Scripts (8 concurrent)                      6.0       2990.5   4984.2
+System Call Overhead                          15000.0      77906.8     51.9
+                                                                   ========
+System Benchmarks Index Score                                         525.5
+
+------------------------------------------------------------------------
+Benchmark Run: Sa Feb 04 2023 21:24:42 - 21:52:43
+6 CPUs in system; running 6 parallel copies of tests
+
+Dhrystone 2 using register variables      261598535.5 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                    44732.8 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               9859.2 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        725713.0 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks          188000.5 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks       2467711.7 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              897106.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 260745.4 lps   (10.0 s, 7 samples)
+Process Creation                              30364.9 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                  27954.1 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   3724.0 lpm   (60.0 s, 2 samples)
+System Call Overhead                         463716.1 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0  261598535.5  22416.3
+Double-Precision Whetstone                       55.0      44732.8   8133.2
+Execl Throughput                                 43.0       9859.2   2292.8
+File Copy 1024 bufsize 2000 maxblocks          3960.0     725713.0   1832.6
+File Copy 256 bufsize 500 maxblocks            1655.0     188000.5   1136.0
+File Copy 4096 bufsize 8000 maxblocks          5800.0    2467711.7   4254.7
+Pipe Throughput                               12440.0     897106.5    721.1
+Pipe-based Context Switching                   4000.0     260745.4    651.9
+Process Creation                                126.0      30364.9   2409.9
+Shell Scripts (1 concurrent)                     42.4      27954.1   6592.9
+Shell Scripts (8 concurrent)                      6.0       3724.0   6206.7
+System Call Overhead                          15000.0     463716.1    309.1
+                                                                   ========
+System Benchmarks Index Score                                        2475.9
+

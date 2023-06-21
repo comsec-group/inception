@@ -1,0 +1,13 @@
+---
+CompileFlags:
+  # The following flags are supported by gcc, but clangd can't deal with them
+  Remove:
+    - -ftrivial-auto-var-init=zero
+    - -mrecord-mcount
+    - -fconserve-stack
+    - -fno-allow-store-data-races
+    - -mfunction-return=thunk-extern
+    - -mindirect-branch-cs-prefix
+    - -mindirect-branch-register
+    - -mindirect-branch=thunk-extern
+    - -mpreferred-stack-boundary=3

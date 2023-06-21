@@ -1,0 +1,86 @@
+   BYTE UNIX Benchmarks (Version 5.1.3)
+
+   System: ee-tik-cn111: GNU/Linux
+   OS: GNU/Linux -- 5.19.0-28-generic -- #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Dec 15 12:05:40 UTC 2
+   Machine: x86_64 (x86_64)
+   Language: en_US.utf8 (charmap="UTF-8", collate="UTF-8")
+   CPU 0: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 1: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 2: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 3: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 4: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   CPU 5: AMD Ryzen 5 2600X Six-Core Processor (7186.0 bogomips)
+          Hyper-Threading, x86-64, MMX, AMD MMX, Physical Address Ext, SYSENTER/SYSEXIT, AMD virtualization, SYSCALL/SYSRET
+   17:12:37 up  1:09,  1 user,  load average: 0.00, 0.00, 0.00; runlevel 2023-02-04
+
+------------------------------------------------------------------------
+Benchmark Run: Sa Feb 04 2023 17:12:37 - 17:40:37
+6 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       43731332.9 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     7455.7 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               1827.0 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        127236.0 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           32242.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        480173.1 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              149599.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  71894.7 lps   (10.0 s, 7 samples)
+Process Creation                               4986.9 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   7751.7 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   2949.8 lpm   (60.0 s, 2 samples)
+System Call Overhead                          77897.5 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   43731332.9   3747.3
+Double-Precision Whetstone                       55.0       7455.7   1355.6
+Execl Throughput                                 43.0       1827.0    424.9
+File Copy 1024 bufsize 2000 maxblocks          3960.0     127236.0    321.3
+File Copy 256 bufsize 500 maxblocks            1655.0      32242.0    194.8
+File Copy 4096 bufsize 8000 maxblocks          5800.0     480173.1    827.9
+Pipe Throughput                               12440.0     149599.7    120.3
+Pipe-based Context Switching                   4000.0      71894.7    179.7
+Process Creation                                126.0       4986.9    395.8
+Shell Scripts (1 concurrent)                     42.4       7751.7   1828.2
+Shell Scripts (8 concurrent)                      6.0       2949.8   4916.3
+System Call Overhead                          15000.0      77897.5     51.9
+                                                                   ========
+System Benchmarks Index Score                                         525.8
+
+------------------------------------------------------------------------
+Benchmark Run: Sa Feb 04 2023 17:40:37 - 18:08:39
+6 CPUs in system; running 6 parallel copies of tests
+
+Dhrystone 2 using register variables      261745840.4 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                    44605.2 MWIPS (9.9 s, 7 samples)
+Execl Throughput                               9814.7 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        729018.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks          188526.4 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks       2518119.0 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              897170.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 260690.9 lps   (10.0 s, 7 samples)
+Process Creation                              30357.8 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                  27978.4 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                   3724.5 lpm   (60.0 s, 2 samples)
+System Call Overhead                         463725.9 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0  261745840.4  22428.9
+Double-Precision Whetstone                       55.0      44605.2   8110.0
+Execl Throughput                                 43.0       9814.7   2282.5
+File Copy 1024 bufsize 2000 maxblocks          3960.0     729018.4   1841.0
+File Copy 256 bufsize 500 maxblocks            1655.0     188526.4   1139.1
+File Copy 4096 bufsize 8000 maxblocks          5800.0    2518119.0   4341.6
+Pipe Throughput                               12440.0     897170.7    721.2
+Pipe-based Context Switching                   4000.0     260690.9    651.7
+Process Creation                                126.0      30357.8   2409.3
+Shell Scripts (1 concurrent)                     42.4      27978.4   6598.7
+Shell Scripts (8 concurrent)                      6.0       3724.5   6207.5
+System Call Overhead                          15000.0     463725.9    309.2
+                                                                   ========
+System Benchmarks Index Score                                        2480.3
+
