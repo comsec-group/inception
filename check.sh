@@ -8,9 +8,9 @@ else
 fi
 
 if [[ $zens == *"AMD Zen 3"* ]]; then
-  echo "AMD Zen 1/2/4: PASS (you cannot evaluate Experiment 3 on this machine)"
+  echo "AMD Zen 1/2/4: FAIL (you cannot evaluate Experiment 3 on this machine)"
 else
-  echo "AMD Zen 1/2/4: OK"
+  echo "AMD Zen 1/2/4: PASS"
 fi
 
 linux=$(uname -r)
