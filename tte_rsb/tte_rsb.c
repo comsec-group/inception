@@ -142,12 +142,14 @@ static inline __attribute__((always_inline)) void flush_range(long start, long s
     asm("mfence");
 }
 
-uint64_t value = 0;
-
+#if defined(BTB)
 void b();
 void c();
 uint64_t b_addr = (uint64_t)b;
 uint64_t c_addr = (uint64_t)c;
+#elif defined(PHT)
+volatile uint64_t value[100] = {0};
+#endif
 
 int main(int argc, char *argv[]){
     if (mmap((void*)RB_PTR, ((RB_SLOTS + 1)<<RB_STRIDE_BITS), PROT_RW, MMAP_FLAGS, -1, 0) == MAP_FAILED) {
@@ -178,7 +180,7 @@ int main(int argc, char *argv[]){
             "mfence\n\t"
             "lfence\n\t"
             ".secret=0\n\t"
-            ".rept "xstr(RB_SLOTS)"\n\t"
+            ".rept "xstr(RSB_SIZE)"\n\t"
             "call 4f\n\t"
             "add $.secret, %%rdi\n\t" 
             "shl $" xstr(RB_STRIDE_BITS) ", %%rdi\n\t"
@@ -198,10 +200,9 @@ int main(int argc, char *argv[]){
             "mov (%[cond]), %%rdi\n\t"
             "test %%rdi, %%rdi\n\t"
             "je 1f\n\t"
-            // "mov "xstr((RB_PTR + (0 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
+            //"mov "xstr((RB_PTR + (0 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
                 
-            ".secret=7\n\t"
-            ".rept "xstr(INJECT_CNT)"\n\t"
+            ".rept "xstr(CALLS_CNT)"\n\t"
             "call 2f\n\t"
             "mov "xstr((RB_PTR + (RSB_SIZE * RB_STRIDE)))", %%r8\n\t"
             "int3\n\t"
@@ -209,18 +210,17 @@ int main(int argc, char *argv[]){
             ".endr\n\t"
         
 
-            // "mov "xstr((RB_PTR + (1 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
+            //"mov "xstr((RB_PTR + (1 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
             "int3\n\t"
 
             "1: lfence\n\t"
-        :: [cond]"r"(&value) : "r8");
-#elif defined(RAS)
+        :: [cond]"r"(value) : "r8", "rdi");
+#elif defined(RSB)
         asm(
             "call 1f\n\t"
             // "mov "xstr((RB_PTR + (0 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
 	    
-	        ".secret=7\n\t"
-            ".rept "xstr(INJECT_CNT)"\n\t"
+            ".rept "xstr(CALLS_CNT)"\n\t"
             "call 2f\n\t"
             "mov "xstr((RB_PTR + (RSB_SIZE * RB_STRIDE)))", %%r8\n\t"
             "int3\n\t"
@@ -257,8 +257,7 @@ int main(int argc, char *argv[]){
             "btb_leak:\n\t"
             // "mov "xstr((RB_PTR + (0 * RB_STRIDE)))", %%r10\n\t" //Optional indication signal
             
-            ".secret=7\n\t"
-            ".rept "xstr(INJECT_CNT)"\n\t"
+            ".rept "xstr(CALLS_CNT)"\n\t"
             "call 4f\n\t"
             "mov "xstr((RB_PTR + (RSB_SIZE * RB_STRIDE)))", %%r8\n\t"
             "lfence\n\t"
@@ -278,7 +277,7 @@ int main(int argc, char *argv[]){
 #endif
 
         for(int k = 0; k < RSB_SIZE; k++){
-            flush_range(RB_PTR, 1<<RB_STRIDE_BITS, RB_SLOTS);
+            if(k > 0) flush_range(RB_PTR, 1<<RB_STRIDE_BITS, RB_SLOTS);
             asm(
                 "mfence\n\t"
                 "mov $1f, %%r9\n\t"
