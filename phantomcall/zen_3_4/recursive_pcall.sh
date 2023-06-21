@@ -3,7 +3,7 @@ if [ "$#" -lt 3 ]; then
   exit 1
 fi
 
-mkdir -p $3 
+mkdir -p $4 
 
 sudo bash -c "echo 0 > /sys/devices/system/cpu/cpu$3/online"
 

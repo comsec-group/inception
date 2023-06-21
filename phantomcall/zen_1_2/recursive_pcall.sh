@@ -9,10 +9,6 @@ clang -DSET=0 -DWAYS=9 workload.c -o workload $5 > /dev/null
 
 sudo bash -c "echo 0 > /sys/devices/system/cpu/cpu$3/online"
 
-clang -DBOGUS -D$1 recursive_pcall.c -o recursive_pcall $5 > /dev/null
-
-taskset -c $2 ./recursive_pcall > $4/bogus.txt
-
 clang -D$1 recursive_pcall.c -o recursive_pcall $5 > /dev/null
 
 taskset -c $2 ./recursive_pcall > $4/no_ht.txt
