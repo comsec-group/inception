@@ -1,6 +1,6 @@
 ## Inception
 
-This is the artifact of [https://www.usenix.org/conference/usenixsecurity23/presentation/trujillo](Inception: Exposing New Attack Surfaces with Training in Transient Execution), published at USENIX Security 2023. Inception is a novel transient execution attack that leaks arbitrary data on all AMD Zen CPUs, in the presence of software- and hardware mitigations. More information about Inception can be found (https://comsec.ethz.ch/inception)[here].
+This is the artifact of Inception: Exposing New Attack Surfaces with Training in Transient Execution, [published](https://www.usenix.org/conference/usenixsecurity23/presentation/trujillo](Inception) at USENIX Security 2023. Inception is a novel transient execution attack that leaks arbitrary data on all AMD Zen CPUs, in the presence of software- and hardware mitigations. More information about Inception can be found [here](https://comsec.ethz.ch/inception).
 
 ## Organization
 
