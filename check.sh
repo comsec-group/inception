@@ -1,22 +1,25 @@
+#!/bin/bash
+
 zens=$(cpuid | grep '(uarch synth)' | head -n 1)
 
 if [[ $zens == *"AMD Zen"* ]]; then
-  echo "AMD Zen: PASS"
+  echo "PASS: AMD Zen"
 else
-  echo "AMD Zen: FAIL (you cannot evaluate this artifact on this machine)"
+  echo "FAIL: AMD Zen: you cannot evaluate this artifact on this machine"
   exit
 fi
 
 if [[ $zens == *"AMD Zen 3"* ]]; then
-  echo "AMD Zen 1/2/4: FAIL (you cannot evaluate Experiment 3 on this machine)"
+  echo "FAIL: AMD Zen 1/2/4: you cannot evaluate Experiment 3 on this machine"
 else
-  echo "AMD Zen 1/2/4: PASS"
+  echo "PASS: AMD Zen 1/2/4"
 fi
 
 linux=$(uname -r)
 
 if [[ $linux == *"5.19.0-28-generic"* ]]; then
-  echo "Linux kernel version: PASS"
+  echo "PASS: Linux kernel version"
 else
-  echo "Linux kernel version: FAIL (you cannot evaluate Experiment 3 on this  machine)"
+  echo "FAIL: Linux kernel version (you cannot evaluate Experiment 3 on this  machine)"
+  echo "  Find copy: https://jknr.me/filez/ubuntu-5.19.0-28-generic.tar.gz"
 fi
