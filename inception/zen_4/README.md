@@ -1,34 +1,35 @@
-This folder contains the PoC exploit of Inception for Zen 4. It requires Linux kernel 5.19.0-28-generic.
+This folder contains the PoC exploit of Inception for Zen 4.
 
-1. Compile inception_kaslr.c and inception.c. Pass two cores on the same physical core. For example:
+1. Compile the workload and inception binaries
 
-clang -DCORE1=1 -DCORE2=9 inception_kaslr.c -o inception_kaslr
-clang -DCORE1=1 -DCORE2=9 inception.c -o inception
+Use the `compile.sh` script (make sure you set the `CORE1` and `CORE2` to sibling threads.
 
-2. Also compile the workloads for the sibling core. Pass the cache set which you want to stress. For example:
+Changing SET (0 - 63) can sometimes improve the performance of the exploit.
 
-clang -DSET=40 workload.c -o workload
+2. Run the Inception KASLR break:
 
-clang -DSET=40 workload2.c -o workload2
+./inception_kaslr <mode>
 
-clang -DSET=40 workload3.c -o workload3
+`<mode>` is optional and if it's omitted will run on against the Ubuntu Linux kernel 5.19.0-28-generic image.
+To run against the kernel module in `kmod` specify 1, to run within a guest against a host running the `kmod`
+module specify 2.
 
-Changing SET (0 - 63) can sometimes improve the performance of the exploit. 
-
-3. Run the Inception KASLR break:
-
-./inception_kaslr
-
-Note that finding the physical address of the reload buffer (second step of inception_kaslr) can take a few minutes, 
+Note that finding the physical address of the reload buffer (second step of inception_kaslr) can take a few minutes,
 depending on the size of your physical memory.
 
-5. Lastly, run Inception, and pass the kernel text, physmap address and a kernel address from which you want to leak:
+3. Lastly, run Inception, and pass the kernel text, physmap address and a kernel address from which you want to leak:
 
-./inception <INSERT KERNEL TEXT> <INSERT PHYSMAP ADDRESS> <INSERT KERNEL ADDRESS>
+./inception <INSERT KERNEL TEXT> <INSERT PHYSMAP ADDRESS> <INSERT KERNEL ADDRESS> <mode>
 
-The results are printed to stdout and are also stored in data.bin. 
+The results are printed to stdout and are also stored in data.bin.
 Before running, make sure transparent hugepages are enabled, since we rely on this feature for
 reducing entropy (not a strict requirement of Inception).
+
+To enable transparent hugepages:
+```
+echo always > /sys/kernel/mm/transparent_hugepage/enabled
+echo 512 > /proc/sys/vm/nr_hugepages
+```
 
 Optional: The kmod in ./kmod can be installed to get an example kernel address from which we can leak:
 
@@ -47,5 +48,3 @@ Broke KASLR in 216 seconds
 When leaking from the provided kmod, the output of inception should look something like this:
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...
-
-
