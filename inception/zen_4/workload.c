@@ -1,42 +1,41 @@
-#include <inttypes.h>
-#include <setjmp.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/mman.h>
-#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
+#include <sys/mman.h>
+#include <inttypes.h>
+#include <time.h>
+#include <signal.h>
+#include <setjmp.h>
 
-#define WAYS     100
-#define SETS     1024
+#define WAYS 100
+#define SETS 1024
 #define HUGEPAGE 2097152
 
-#define str(s)  #s
+#define str(s) #s
 #define xstr(s) str(s)
 
 #define OFF3 128
 
 volatile char *base;
 
-void get_addrs(uint64_t *buf, uint64_t set, int amount) {
-    for (int i = 0; i < amount; i++) {
-        buf[i] = ((((((uint64_t) base) >> 16) + i) << 10) + set) << 6;
+void get_addrs(uint64_t *buf, uint64_t set, int amount){
+    for(int i = 0; i < amount; i++){
+        buf[i] = ((((((uint64_t)base) >> 16) + i) << 10) + set) << 6;
     }
 }
 
-int main() {
-    base = aligned_alloc(HUGEPAGE, HUGEPAGE);
-    madvise((void *) base, HUGEPAGE, MADV_HUGEPAGE);
-    mprotect((void *) base, HUGEPAGE, PROT_READ | PROT_WRITE | PROT_EXEC);
+int main(){
+    base = aligned_alloc(HUGEPAGE, HUGEPAGE*4);
+    madvise((void *)base, HUGEPAGE*4, MADV_HUGEPAGE);
+    mprotect((void *)base, HUGEPAGE*4, PROT_READ|PROT_WRITE|PROT_EXEC);
 
     uint64_t addrs[SETS * WAYS];
-    for (int i = 0; i < SETS; i++) {
+    for(int i = 0; i < SETS; i++){
         get_addrs(addrs + (WAYS * i), i, WAYS);
     }
 
-    while (1) {
-        // clang-format off
+    while(1){
         asm(
             ".rept 10000\n\t"
             "mov "xstr(((SET * WAYS + 0) * 8)) "(%[addrs_addr]), %%r8\n\t"
@@ -153,9 +152,10 @@ int main() {
 #endif
 
             ".endr\n\t"
-            :: [addrs_addr]"r"(addrs) : "r8");
-        // clang-format on
+            :: [addrs_addr]"r"(addrs) : "r8"
+        );
     }
 
     return 0;
 }
+

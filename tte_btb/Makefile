@@ -15,7 +15,8 @@ $(BIN: % = %.o): %: %.o
 
 $(BIN): $(OBJS)
 	@echo LD $@
-	@$(CC) $^ $(LDFLAGS) $(LIBS) -o $@
+	mkdir -p out
+	@$(CC) $^ $(LDFLAGS) $(LIBS) -o out/$@
 
 .c.o:
 	@echo CC $<

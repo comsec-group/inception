@@ -3,10 +3,10 @@
 make clean all
 
 echo [-] TTE_BTB-BTB
-./ijmp_ijmp
+./out/ijmp_ijmp
 echo [-] TTE_PHT-BTB
-./jcc_ijmp
+./out/jcc_ijmp
 echo [-] TTE_RSB-BTB
-./ret_ijmp
+./out/ret_ijmp
 echo [-] TTE_OOO-BTB
-./ooo_ijmp
+./out/ooo_ijmp
